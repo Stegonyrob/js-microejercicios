@@ -6,14 +6,17 @@ document.getElementById("numberForm").addEventListener("submit", function(event)
     let secondNumber = Number(document.getElementById("secondNumber").value);
     let thirdNumber = Number(document.getElementById("thirdNumber").value);
     let bigNumber;
-  
-    if (firstNumber > secondNumber && firstNumber < thirdNumber) {
+ 
+    if (firstNumber > secondNumber && firstNumber > thirdNumber) {
         bigNumber = firstNumber;
-    } else {
+    } else if (secondNumber > firstNumber && secondNumber > thirdNumber) {
         bigNumber = secondNumber;
+    } else {
+        bigNumber = thirdNumber;
     }
-  
+ 
     let outputElement = document.getElementById("result");
-    outputElement.innerHTML = "El número " + bigNumber + " es mayor que el " + (bigNumber === firstNumber ? secondNumber : firstNumber);
-  });
+    outputElement.innerHTML = "El número " + bigNumber + " es el mayor " 
+});
+ 
   
